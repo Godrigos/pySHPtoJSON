@@ -1,6 +1,6 @@
 from cx_Freeze import setup, Executable
 
-executables = [Executable('main.py')]
+executables = [Executable('pySHPtoJSON.py')]
 
 setup(
     name='pySHPtoGeoJ',
