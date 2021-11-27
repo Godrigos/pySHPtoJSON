@@ -40,7 +40,7 @@ def main():
         spinner.succeed()
 
     print('\n##### TopoJSON #####')
-    spinner2 = Halo(spinner='dots', color='white')
+    spinner = Halo(spinner='dots', color='white')
 
     for file in files:
         spinner.start(text=f'\rConverting shapefile in {file} to TopoJSON.')
@@ -56,7 +56,7 @@ def main():
             tp.Topology(shape).to_json(fp='./topo/UFs/' +
                                        os.path.splitext(file)[0] + '.json')
 
-        spinner2.succeed()
+        spinner.succeed()
 
 
 if __name__ == '__main__':
