@@ -3,17 +3,20 @@ import os
 from alive_progress import alive_bar
 
 
-def dlzip(data='Brasil'):
+def dlzip(data='brasil'):
     """Download 2020 zip files from ftp://geoftp.ibge.gov.br."""
 
     mainUrl = 'geoftp.ibge.gov.br'
     urlDir = '/organizacao_do_territorio/malhas_territoriais/' \
         'malhas_municipais/municipio_2020/'
 
-    if data == 'Brasil' or 'Brazil':
+    if data.lower() == 'brasil' or 'brazil':
         level = 'Brasil/BR/'
-    else:
+    elif data.lower() == 'uf' or 'ufs':
         level = 'UFs/'
+        uf = ''
+    else:
+        level = 'Brasil/BR/'
 
     try:
         ftp = ftplib.FTP(mainUrl)
@@ -28,7 +31,7 @@ def dlzip(data='Brasil'):
         print("FTP connection error!")
         exit(1)
 
-    with alive_bar(len(files)) as bar:
+    with alive_bar(len(files), bar='blocks') as bar:
         for file in files:
             if os.path.exists('./zip/' + file):
                 bar()
@@ -38,5 +41,5 @@ def dlzip(data='Brasil'):
                                open('./zip/' + file, 'wb').write)
                 bar()
 
-    print('Download finished!')
+    print()
     ftp.close()
