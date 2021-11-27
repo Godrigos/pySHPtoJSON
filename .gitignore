@@ -140,8 +140,12 @@ cython_debug/
 
 # cx_freeze
 build/
+bin/
 
 # Other
 zip/
 geo/
 topo/
+include/
+share/
+lib64/
