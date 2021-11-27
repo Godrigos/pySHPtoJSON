@@ -13,7 +13,7 @@ You may install Python using the source code or a pre-built
 installer for your platform, all available at
 [Python download page](https://www.python.org/downloads/).
 
-The other dependency are listed in the requirements.txt file. And can be installed with `pip install requirements.txt`.
+The other dependency are listed in the requirements.txt file and can be installed with `pip install requirements.txt`.
 
 ## Usage
 
@@ -31,3 +31,9 @@ Also, several original compacted shapefiles files are stored: `zip` directory co
 
 ## Binaries
 Binary executables may be generated for each platform by running `python3 setup.py build`. It will work only on the operational system that generated it.
+
+This command will create a subdirectory called `build` with a further subdirectory starting with the letters `exe.` and ending with the typical identifier for the platform and python version. This allows for multiple platforms to be built without conflicts.
+
+On Windows, you can build a simple installer containing all the files cx_Freeze includes for your application, by running the setup script as:
+
+`python setup.py bdist_msi`
