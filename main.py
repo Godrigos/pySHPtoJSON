@@ -40,7 +40,6 @@ def main():
         spinner.succeed()
 
     print('\n##### TopoJSON #####')
-    spinner = Halo(spinner='dots', color='white')
 
     for file in files:
         spinner.start(text=f'\rConverting shapefile in {file} to TopoJSON.')
