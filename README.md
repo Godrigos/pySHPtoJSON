@@ -17,7 +17,7 @@ The other dependency are listed in the requirements.txt file and can be installe
 
 ## Usage
 
-Clone this repository, install the dependencies and run `./pySHPtoJSON.py -h` to read the instructions. Make sure that The file has execution permission.
+Clone this repository, install the dependencies and run `./pySHPtoJSON.py -h` to read the instructions. Make sure that `pySHPtoJSON.py` file has execution permission.
 
 TopoJSON files will be generated inside `topo/` directory.
 GeoJSON files will be generated inside `geo/` directory.
