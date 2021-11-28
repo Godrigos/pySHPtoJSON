@@ -1,6 +1,6 @@
 # Brazil Atlas
 
-Inpered on [Carolina Bigonha's br-atlas](https://github.com/carolinabigonha/br-atlas), this repository is for generating [TopoJSON](https://github.com/mbostock/topojson) and [GeoJSON](https://doc.arcgis.com/pt-br/arcgis-online/reference/geojson.htm) files for Brazilian maps.
+Inpered on [Carolina Bigonha's br-atlas](https://github.com/carolinabigonha/br-atlas), this repository is for generating [TopoJSON](https://github.com/mbostock/topojson) and [GeoJSON](https://geojson.org) files for Brazilian maps.
 
 All maps are downloaded from [IBGE (Instituto Brasileiro de Geografia e Estatística)](http://www.ibge.gov.br/), the agency responsible for
 statistical, geographic, cartographic, geodetic and environmental information
