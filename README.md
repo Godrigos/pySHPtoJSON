@@ -17,15 +17,15 @@ The other dependency are listed in the requirements.txt file and can be installe
 
 ## Usage
 
-Clone this repository, install the dependencies and run `./main.py -h` to read the instructions.
+Clone this repository, install the dependencies and run `./pySHPtoJSON.py -h` to read the instructions.
 
 TopoJSON files will be generated inside `topo/` directory.
 GeoJSON files will be generated inside `geo/` directory.
 
 ## More Information
 
-Running `./main.py Brasil` will generate TopoJSON and GeoJSON files for
-Brazil and  `./main.py UFs` for each of its states, municipalities, macro and microregions. They are located in `BR/` and `UFs/` subdirectories.
+Running `./pySHPtoJSON.py Brasil` will generate TopoJSON and GeoJSON files for
+Brazil and  `./pySHPtoJSON.py UFs` for each of its states, municipalities, macro and microregions. They are located in `BR/` and `UFs/` subdirectories.
 
 Also, several original compacted shapefiles files are stored: `zip` directory contains these files downloaded from IBGE. If you wish you may delete this extra directory.
 
