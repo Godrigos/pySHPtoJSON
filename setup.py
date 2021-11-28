@@ -6,7 +6,8 @@ executables = [Executable('pySHPtoJSON.py')]
 
 BUILD_EXE_OPTIONS = {
     'build_exe': r'bin',
-    'excludes': ['matplotlib', 'sqlite3', 'scipy', 'tkinter'],
+    'excludes': ['matplotlib', 'sqlite3', 'scipy', 'tkinter',
+                 'PyQt4', 'PyQt5'],
     'path': [os.path.abspath('pySHPtoJSON')] + sys.path,
 }
 
