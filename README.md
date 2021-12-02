@@ -13,7 +13,7 @@ You may install Python using the source code or a pre-built
 installer for your platform, all available at
 [Python download page](https://www.python.org/downloads/).
 
-The other dependencies are listed in the requirements.txt file and can be installed with `pip install requirements.txt`.
+The other dependencies are listed in the requirements.txt file and can be installed with `pip install -r requirements.txt`.
 
 ## Usage
 
