@@ -35,7 +35,3 @@ Also, several original compacted shapefiles files are stored: `zip` directory co
 Binary executables may be generated for each platform by running `python3 setup.py build`. It will work only on the operational system that generated it.
 
 This command will create a subdirectory called `bin` with the executable and its needed libraries at  a `lib` directory.
-
-On Windows, you can build a simple installer containing all the files cx_Freeze includes for your application, by running the setup script as:
-
-`python setup.py bdist_msi`
