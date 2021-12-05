@@ -29,7 +29,7 @@ GeoJSON files will be generated inside `geo/` directory.
 Running `./pySHPtoJSON.py Brasil` will generate TopoJSON and GeoJSON files for
 Brazil and  `./pySHPtoJSON.py UFs` for each of its states, municipalities, macro and microregions. They are located in `BR/` and `UFs/` subdirectories.
 
-Also, several original compacted shapefiles files are stored: `zip` directory contains these files downloaded from IBGE. If you wish you may delete this extra directory.
+Also, several original compacted shapefiles files are stored: `zip` directory contains these files downloaded from IBGE. If you wish you may delete this extra directory after conversion.
 
 ## Binaries
 Binary executables may be generated for each platform by running `python3 setup.py build`. It will work only on the operational system that generated it.
