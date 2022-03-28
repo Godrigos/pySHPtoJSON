@@ -6,11 +6,11 @@ from time import sleep
 
 
 def dlzip(data):
-    """Download 2020 zip files from ftp://geoftp.ibge.gov.br."""
+    """Download 2021 zip files from ftp://geoftp.ibge.gov.br."""
 
     mainUrl = 'geoftp.ibge.gov.br'
     urlDir = '/organizacao_do_territorio/malhas_territoriais/' \
-        'malhas_municipais/municipio_2020/'
+        'malhas_municipais/municipio_2021/'
     files = []
 
     try:
