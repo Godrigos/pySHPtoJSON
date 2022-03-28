@@ -4,7 +4,7 @@ Inspired by [Carolina Bigonha's br-atlas](https://github.com/carolinabigonha/br-
 
 All maps are downloaded from [IBGE (Instituto Brasileiro de Geografia e Estatística)](http://www.ibge.gov.br/), the agency responsible for
 statistical, geographic, cartographic, geodetic and environmental information
-in Brazil and were published on 2020.
+in Brazil and were published on 2021.
 
 ## Dependencies
 
