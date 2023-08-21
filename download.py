@@ -10,7 +10,7 @@ def dlzip(data):
 
     mainUrl = 'geoftp.ibge.gov.br'
     urlDir = '/organizacao_do_territorio/malhas_territoriais/' \
-        'malhas_municipais/municipio_2021/'
+        'malhas_municipais/municipio_2022/'
     files = []
 
     try:
