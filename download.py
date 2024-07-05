@@ -1,58 +1,47 @@
-import ftplib
 import os
 from alive_progress import alive_bar
-from states import states
-from time import sleep
+from getBR import getBR
+from getUFs import getUFs
+from urllib.request import urlretrieve, urlopen
 
 
-def dlzip(data):
-    """Download 2021 zip files from ftp://geoftp.ibge.gov.br."""
+def dlzip(data: str, year: str):
+    """Download 2022 zip files from ftp://geoftp.ibge.gov.br."""
 
-    mainUrl = 'geoftp.ibge.gov.br'
-    urlDir = '/organizacao_do_territorio/malhas_territoriais/' \
-        'malhas_municipais/municipio_2022/'
-    files = []
+    mainURL: str = 'https://geoftp.ibge.gov.br' \
+        '/organizacao_do_territorio/malhas_territoriais' \
+        f'/malhas_municipais/municipio_{str(year)}/'
 
     try:
-        ftp = ftplib.FTP(mainUrl)
-        ftp.login()
+        urlopen(mainURL).decode('utf-8')
+    except Exception as e:
+        exit(e)
 
-        if not os.path.isdir("zip"):
-            os.mkdir('zip')
-    except ftplib.all_errors:
-        print("FTP connection error!")
-        exit(1)
+    links: list[str] = []
+
+    if not os.path.isdir("zip"):
+        os.mkdir('zip')
 
     if data == 'Brasil':
-        level = 'Brasil/BR/'
-        ftp.cwd(urlDir + level)
-        files = ftp.nlst()
+        links = getBR(f'{mainURL}Brasil/BR/')
     elif data == 'UFs':
-        level = 'UFs/'
-        for state in states:
-            ftp.cwd(urlDir + level + state + '/')
-            files = files + ftp.nlst()
+        links = getUFs(f'{mainURL}UFs')
     else:
         exit(1)
 
-    with alive_bar(len(files), bar='blocks') as bar:
-        if level == 'Brasil/BR/':
-            for file in files:
-                if os.path.exists('./zip/' + file):
+    with alive_bar(len(links), bar='blocks') as bar:
+        if data == 'Brasil':
+            for link in links:
+                if os.path.exists(f'./zip/{os.path.basename(link)}'):
                     bar()
                 else:
-                    ftp.retrbinary('RETR ' + file,
-                                   open('./zip/' + file, 'wb').write)
+                    urlretrieve(link, f'./zip/{os.path.basename(link)}')
                     bar()
-        elif level == 'UFs/':
-            for state in states:
-                ftp.cwd(urlDir + level + state + '/')
-                files = ftp.nlst()
-                for file in files:
-                    ftp.cwd(urlDir + level + state + '/')
-                    ftp.retrbinary('RETR ' + file,
-                                   open('./zip/' + file, 'wb').write)
+        elif data == 'UFs':
+            for link in links:
+                if os.path.exists(f'./zip/{os.path.basename(link)}'):
                     bar()
-
+                else:
+                    urlretrieve(link, f'./zip/{os.path.basename(link)}')
+                    bar()
     print()
-    ftp.close()

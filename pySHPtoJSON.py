@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
 
+import topojson as tp
+import argparse
+from halo import Halo
+from download import dlzip
+import os
+import geopandas as gpd
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-
-import geopandas as gpd
-import os
-from download import dlzip
-from halo import Halo
-import argparse
-import topojson as tp
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('mesh', help='The mesh level to download and convert.',
                     type=str, choices=['Brasil', 'UFs'])
+parser.add_argument('--year',
+                    help='The year of the data to download. Defaults to 2022',
+                    type=str, default='2023')
 args = parser.parse_args()
 
 
 def main():
-    dlzip(args.mesh)
+    dlzip(args.mesh, args.year)
 
     if os.path.isdir("zip"):
         files = os.listdir('zip')

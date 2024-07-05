@@ -1,4 +1,4 @@
-states = [
+STATES = [
     'RO', 'AC', 'AM', 'RR', 'PA',
     'AP', 'TO', 'MA', 'PI', 'CE',
     'RN', 'PB', 'PE', 'AL', 'SE',
