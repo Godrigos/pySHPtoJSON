@@ -13,7 +13,7 @@ def dlzip(data: str, year: str):
         f'/malhas_municipais/municipio_{str(year)}/'
 
     try:
-        urlopen(mainURL).decode('utf-8')
+        urlopen(mainURL)
     except Exception as e:
         exit(e)
 

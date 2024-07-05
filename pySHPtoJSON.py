@@ -15,7 +15,7 @@ parser.add_argument('mesh', help='The mesh level to download and convert.',
                     type=str, choices=['Brasil', 'UFs'])
 parser.add_argument('--year',
                     help='The year of the data to download. Defaults to 2022',
-                    type=str, default='2023')
+                    type=str, default='2022')
 args = parser.parse_args()
 
 
