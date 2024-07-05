@@ -12,8 +12,8 @@ BUILD_EXE_OPTIONS = {
 }
 
 setup(
-    name='pySHPtoGeoJ',
-    version='1.0',
+    name='pySHPtoJSON',
+    version='1.1',
     description='A CLI tool to download and convert shapefiles of Brazilian'
     ' territory made available by IBGE.',
     options={'build_exe': BUILD_EXE_OPTIONS},
