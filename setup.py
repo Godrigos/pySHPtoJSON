@@ -9,6 +9,8 @@ BUILD_EXE_OPTIONS = {
     'excludes': ['matplotlib', 'sqlite3', 'scipy', 'tkinter',
                  'PyQt4', 'PyQt5'],
     'path': [os.path.abspath('pySHPtoJSON')] + sys.path,
+    'packages': ['numpy'],
+    'includes': 'numpy',
 }
 
 setup(

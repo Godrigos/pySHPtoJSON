@@ -1,4 +1,5 @@
 import os
+import sys
 from alive_progress import alive_bar
 from getBR import getBR
 from getUFs import getUFs
@@ -15,7 +16,7 @@ def dlzip(data: str, year: str):
     try:
         urlopen(mainURL)
     except Exception as e:
-        exit(e)
+        sys.exit(e)
 
     links: list[str] = []
 

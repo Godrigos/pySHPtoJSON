@@ -6,9 +6,10 @@ from halo import Halo
 from download import dlzip
 import os
 import geopandas as gpd
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+import sys
+import ssl
 
+ssl._create_default_https_context = ssl._create_stdlib_context
 
 parser = argparse.ArgumentParser()
 parser.add_argument('mesh', help='The mesh level to download and convert.',
@@ -67,4 +68,4 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        exit('Execution interrupted by the user.')
+        sys.exit('Execution interrupted by the user.')
