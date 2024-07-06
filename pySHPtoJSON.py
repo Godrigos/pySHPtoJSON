@@ -68,4 +68,4 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        sys.exit('Execution interrupted by the user.')
+        sys.exit('\nExecution interrupted by the user.')
